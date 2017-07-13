@@ -1,0 +1,4 @@
+[[20,16,13]]
+4.1 Figure Description
+	4.1.1 FastQC
+		Quality score across all bases

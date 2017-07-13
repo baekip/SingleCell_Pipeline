@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<SortedReference>
+  <FormatVersion>8</FormatVersion>
+  <SoftwareVersion>iSAAC-03.16.12.05</SoftwareVersion>
+  <Contigs>
+    <Contig Position="0">
+      <Index>0</Index>
+      <KaryotypeIndex>0</KaryotypeIndex>
+      <Name>phix</Name>
+      <Sequence>
+        <File>/TBI/Tools/Isaac3/iSSAC-build/share/iSAAC-03.16.12.05/data/examples/PhiX/iGenomes/PhiX/NCBI/1993-04-28/Sequence/Chromosomes/phix.fa</File>
+        <Offset>6</Offset>
+        <Size>5463</Size>
+      </Sequence>
+      <TotalBases>5386</TotalBases>
+      <AcgtBases>5386</AcgtBases>
+      <BamMetadata>
+        <Sq>
+          <As></As>
+          <Ur></Ur>
+          <M5>3332ed720ac7eaa9b3655c06f6b9e196</M5>
+        </Sq>
+      </BamMetadata>
+    </Contig>
+  </Contigs>
+  <Permutations>
+    <Permutation Name="ABCD">
+      <Masks Width="0" SeedLength="48">
+        <Mask Mask="0">
+          <File>/TBI/Share/HumanTeam/BioPipeline/Isaac_Pipeline_v1/example/PhiX_test/PhiX_ref/Temp/neighbor-positions-48-0.dat</File>
+          <Kmers>
+            <Total>5339</Total>
+          </Kmers>
+        </Mask>
+      </Masks>
+    </Permutation>
+  </Permutations>
+</SortedReference>

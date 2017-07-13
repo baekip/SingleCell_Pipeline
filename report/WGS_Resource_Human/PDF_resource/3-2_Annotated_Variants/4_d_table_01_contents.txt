@@ -1,0 +1,5 @@
+[[10]]
+¡Ü Sample ID: ID provided from customer
+¡Ü Silent Mutation: Number of Silent mutation, which is mutation in DNA tha do not significantly alter the phenotype of organism in which it occurs.
+¡Ü Missense Mutation: Number of Missense mutation, which is a point mutation in which a single nucleotide change results in a codon that codes for a different amino acid.
+¡Ü Nonsense Mutation: Number of Nonsense mutation, which is a point mutation in a sequence of DNA results in a premature stop codon

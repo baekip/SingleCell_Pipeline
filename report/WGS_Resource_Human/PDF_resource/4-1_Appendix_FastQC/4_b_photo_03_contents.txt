@@ -1,0 +1,5 @@
+[[9]]
+¡Ü This figure shows an overview of the degree of duplication for every sequence in the set and the relative number of sequences with different degrees of duplication.
+¡Ü X-axis: Sequence Duplication Level
+¡Ü Y-axis: Duplicate relative to unique 
+¡Ü Warning: This module will issue a warning if non-unique sequences make up more than 20% of the total. 

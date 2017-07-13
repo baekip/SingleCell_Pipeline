@@ -1,0 +1,71 @@
+# WES configure file
+################################################################################################################
+#program
+java_1_6          =   /usr/bin/java 
+java_1_7          =   /BiO/BioTools/java/jre1.7.0_51/bin/java
+sickle            =   /BiO/BioTools/sickle/sickle-v1.33/sickle
+fastqc            =   /BiO/BioTools/fastqc/FastQC_v0.10.1/fastqc
+bwa               =   /BiO/BioTools/bwa/bwa-0.7.12/bwa
+picard            =   /BiO/BioTools/picard/picard-tools-1.98/
+gatk              =   /BiO/BioTools/gatk/GenomeAnalysisTKLite-2.3-9.jar
+samtools          =   /BiO/BioTools/samtools/samtools-1.2/samtools
+bcftools          =   /BiO/BioTools/bcftools/bcftools-1.2/bcftools
+bedtools          =   /BiO/BioTools/bedtools/bedtools-2.17.0/bin/bedtools
+qualimap          =   /BiO/BioTools/qualimap/qualimap_v2.0.1/qualimap
+snpeff            =   /BiO/BioTools/snpeff/snpEff_v4.2/snpEff.jar
+snpsift           =   /BiO/BioTools/snpeff/snpEff_v4.2/SnpSift.jar
+snpeff_config     =   /BiO/BioTools/snpeff/snpEff_v4.2/snpEff.config
+vcf_per_line      =   /BiO/BioTools/snpeff/snpEff_v4.2/scripts/vcfEffOnePerLine.pl
+verifybamid       =   /BiO/BioTools/verifybamid/verifyBamID-v.1.1.1/bin/verifyBamID
+contest           =   /BiO/BioTools/contest/contest-1.0.24530/contest-1.0.24530-bin/ContEst.jar
+varscan           =   /BiO/BioTools/varscan/varscan-v2.3.9/VarScan.v2.3.9.jar
+mutect            =   /BiO/BioTools/mutect/muTect-1.1.4/muTect-1.1.4.jar
+indeldetector     =   /BiO/BioTools/gatk/GenomeAnalysisTKLite-2.3-9.jar
+pyloh             =   /BiO/BioTools/pyloh/PyLOH/PyLOH.py
+tabix             =   /BiO/BioTools/tabix/tabix-v0.2.5/
+vcftools          =   /BiO/BioTools/vcftools/vcftools_0.1.11/bin/
+delly             =   /BiO/BioTools/delly/0.7.3/delly_v0.7.3_linux_x86_64bit 
+################################################################################################################
+
+#################################################################################################################
+# reference
+reference         =   /BiO/BioResources/References/Human/hg19/hg19.fa
+reference_dict    =   /BiO/BioResources/References/Human/hg19/hg19.dict
+ref_hap           =   /BiO/BioResources/References/Human/hg19/hapmap_3.3.hg19.sites.vcf
+ref_omni          =   /BiO/BioResources/References/Human/hg19/1000G_omni2.5.hg19.sites.vcf
+ref_dbsnp         =   /BiO/BioResources/References/Human/hg19/dbsnp_138.hg19.vcf
+ref_1000g_indel   =   /BiO/BioResources/References/Human/hg19/Mills_and_1000G_gold_standard.indels.hg19.vcf
+contest_pop_vcf   =   /BiO/BioTools/contest/contest-1.0.24530/hg19_population_stratified_af_hapmap_3.3.vcf
+1000g_db         =    /BiO/BioResources/DBs/1000G/phase3/ALL.wgs.1000g.phase3.20130502.sites.vcf.gz
+esp6500_db        =   //BiO/BioResources/DBs/ESP6500/ESP6500.vcf.gz
+exac_db           =   /BiO/BioResources/DBs/EXAC/release0.3/ExAC.r0.3.sites.vep.header.vcf.gz
+cds_db            =   /BiO/BioResources/DBs/CDS/CDS_WGS_400.out.header.vcf.gz 
+knih_db           =   /BiO/BioResources/DBs/KNIH/KNIH.BOTH.sort.out.herder.vcf.gz
+cosmic_db         =   /BiO/BioResources/DBs/COSMICDB/v71/CosmicCodingMuts.anno.vcf.gz 
+snpeff_db         =   hg19
+delly_excl_file   =   /BiO/BioTools/delly/0.7.3/excludeTemplates/human.hg19.excl.tsv 
+#################################################################################################################
+script_path       =    /home/shsong/work/Pipeline/dnaseq/script/ 
+styles_path       =    /home/shsong/work/Pipeline/dnaseq/styles/
+descript_path     =    /home/shsong/work/Pipeline/dnaseq/descript/
+dev_path          =    /BiO/BioPeople/baekip/text2pdf/dev/
+project_path      =    /BiO/BioPeople/baekip/BioPipeline/WGS_ISAAC_Pipeline/example 
+rawdata_path      =    /BiO/BioPeople/baekip/BioPipeline/WGS_ISAAC_Pipeline/example/input 
+result_path       =    /BiO/BioPeople/baekip/BioPipeline/WGS_ISAAC_Pipeline/example/output
+report_path       =    /BiO/BioPeople/shsong/Project/WGS_CHG/C160006-P022/report
+read_length       =    150
+sample_id         =    TN1610D1351,TN1610D1352,TN1610D1353 
+project_id        =    CHG13
+delivery_tbi_id   =    MM160705RP:TN1607D1759:.,MM160524RS:TN1607D1760:.
+#control_id        =    T1212D1413,T1212D1414
+#case_id           =    T1212D1415
+pair_id           =    12000581-N_12000581-T
+threads           =    8
+###############################################################################################################
+#Filter option
+Filter1           =    ANN[*].EFFECT:=coding_sequence_variant/=inframe_insertion/=disruptive_inframe_insertion/=inframe_deletion/=disruptive_inframe_deletion/=exon_loss_variant/=frameshift_variant/=missense_variant/=initiator_codon_variant/=stop_retained_variant/=rare_amino_acid_variant/=splice_acceptor_variant/=splice_donor_variant/=splice_region_variant/=splice_region_variant/=splice_region_variant/=stop_lost/=5_prime_UTR_premature/=start_lost/=stop_gained/=synonymous_variant/=start_retained/=stop_retained_variant
+Filter2           =   'dbNSFP_SIFT_score:(0.05'
+Filter3           =   'dbNSFP_Polyphen2_HDIV_score:)0.458'
+Filter4           =   'dbNSFP_phastCons100way_vertebrate:>0.2'
+Filter5           =   'dbNSFP_1000Gp1_AF:<0.01'
+Filter6           =   'InHouse_AF:<0.01'

@@ -1,0 +1,5 @@
+[[10]]
+¡Ü Sample ID: ID provided from customer
+¡Ü TS (Transitions): Number of transitions, which are point mutations that changes a purine nucleotide to another purine or a pyrimidine nucleotide to another pyrimidine
+¡Ü TV (Transversions): Number of transversions, which refer to the substitution of a purine for a pyrimidine or vice versa, in deoxyribonucleic acid (DNA)
+¡Ü Ts/Tv ratio: The ratio of the number of transitions to the number of transversions for a pair of sequences 

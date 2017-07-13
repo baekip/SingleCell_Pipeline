@@ -1,0 +1,3 @@
+Sample ID	Insert Size	GC contents	Reference Coverage
+TN1507D0293	<img:images_qualimapReport/genome_coverage_0to50_histogram.png>	<img:images_qualimapReport/genome_coverage_histogram.png>	<img:images_qualimapReport/genome_gc_content_per_window.png>
+Sample2	<img:images_qualimapReport/genome_coverage_across_reference.png>	<img:images_qualimapReport/genome_coverage_quotes.png>	<img:images_qualimapReport/genome_homopolymer_indels.png>

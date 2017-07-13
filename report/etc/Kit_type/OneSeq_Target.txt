@@ -1,0 +1,5 @@
+[[11],[],[TL],[280]]
+Reference	hg19
+Library Prep Kit	Agilent OneSeq Target Enrichment
+Read length	101 x 2
+Target size	28Mb

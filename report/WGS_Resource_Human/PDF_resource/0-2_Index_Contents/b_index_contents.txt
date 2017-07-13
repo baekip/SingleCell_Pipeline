@@ -1,0 +1,36 @@
+[[11]]
+
+
+
+General Information
+	1.1 Sample Information
+	1.2 Analysis Contents
+
+Workflow
+	2.1 Whole Genome Process
+	2.2 Sequencing Method
+	2.3 Analysis Pipeline
+
+Data Analysis Results
+	3.1 Basic Statistics
+		3.1.1 Mapping Summary for Produced Sequencing Data
+	3.2 Annotated Variants
+		3.2.1 Number Variants By Type
+		3.2.2 Ts/Tv and Hetero/Homo
+		3.2.3 Variants Categories
+		3.2.4 Number of Effects by Functional Class
+	3.4 Quality Controls
+		3.4.1 FastQC Results
+		3.4.2 Qualimap Results
+
+Appendix
+	4.1 Figure Description
+		4.1.1 FastQC
+		4.1.2 Qualimap
+	4.2 File Format Description
+		4.2.1 Variant Calling Format (VCF)
+		4.2.2 Annotation Result Excel Format (xls)
+	4.3 Directory Structure
+
+Reference
+

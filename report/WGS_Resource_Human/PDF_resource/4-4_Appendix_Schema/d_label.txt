@@ -1,0 +1,6 @@
+[[12]]
+ 
+
+ Location of total results (i.e. rawdata, BAM file, report etc) is followed by
+ the above figure. To access our FTP server, please refer to the FTP related
+ information (i.e. server IP, ID, PW) provided by Theragen Etex.

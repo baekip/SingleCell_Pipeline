@@ -1,0 +1,7 @@
+[[11],[],[TL],[280]]
+Reference	NCBIM37 (mm9)
+Library Prep Kit	SureSelect XT Mouse
+Target size	49.6Mb
+Number of genes	24,306
+Number of targets exons	221,784
+Coverage uniformity (10X)	กร 90%

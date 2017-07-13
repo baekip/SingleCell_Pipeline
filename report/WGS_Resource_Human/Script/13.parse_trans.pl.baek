@@ -1,0 +1,116 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+if (@ARGV != 2) {
+    printUsage();
+}
+
+my $in_general_config = $ARGV[0];
+my $in_pipeline_config = $ARGV[1];
+
+
+my %info;
+read_config ($in_general_config, \%info);
+
+my $project_path = $info{project_path};
+my $resource_path = "$project_path/report/resource/3-2_Annotated_Variants/";
+
+my @list_delivery_id = split /\,/, $info{delivery_tbi_id};
+my @pathogenic_total_list;
+
+#my $output_table = "$resource_path/2_c_table_01.txt";
+
+#open (my $fh_table, '>', $output_table) or die;
+#print $fh_table "[[11]]\n";
+#print $fh_table "Sample ID\tTransitions\tTransversions\tTs/Tv\\nratio\n";
+
+print "[[11]]\n";
+print "Sample ID\tTransitions\tTransversions\tTs/Tv\\nratio\n";
+
+foreach (@list_delivery_id){
+    my ($delivery_id, $tbi_id, $type_id) = split /\:/, $_;
+    my ($a,$b,$c,$d,$e,$f) = (0,0,0,0,0,0);
+    my $vcf_file = "$project_path/result/14_snpeff_human_run/$tbi_id/$tbi_id.BOTH.snpeff.vcf";
+#    my $vcf_file = "$project_path/result/13_gatk_unifiedgenotyper/$tbi_id/$tbi_id.BOTH.vcf";
+    checkFile($vcf_file);
+
+    open (my $fh_vcf, '<:encoding(UTF-8)', $vcf_file) or die "Could open not <$vcf_file>";
+    while (my $row = <$fh_vcf>){
+        chomp $row;
+        if ($row =~ /^#/) {next;}
+        my @col_contents = split/\t/, $row;
+        my $chr = $col_contents[0]; 
+        my $ref = $col_contents[3];
+        my $alt = $col_contents[4];
+        
+        if (length($alt) != 1 or length($ref) !=1) {next};
+
+        if (($ref eq "T" and $alt eq "G") or ($ref eq "A" and $alt eq "C")){
+            $a = $a + 1;
+        }elsif (($ref eq "T" and $alt eq "C") or ($ref eq "A" and $alt eq "G")) {
+            $b = $b + 1;
+        }elsif (($ref eq "T" and $alt eq "A") or ($ref eq "A" and $alt eq "T")) {
+            $c = $c + 1;
+        }elsif (($ref eq "C" and $alt eq "A") or ($ref eq "G" and $alt eq "T")) {
+            $d = $d + 1;
+        }elsif (($ref eq "C" and $alt eq "G") or ($ref eq "G" and $alt eq "C")) {
+            $e = $e + 1;
+        }elsif (($ref eq "C" and $alt eq "T") or ($ref eq "G" and $alt eq "A")) {
+            $f = $f + 1;
+        }else{ print "Not change Single Nucleotide Variants!!\n";}
+    }
+    my $total_ts = $b+$f;
+    my $total_tv = $a+$c+$d+$e;
+    my $ratio = $total_ts/$total_tv;
+    my $total = $a+$b+$c+$d+$e+$f;
+    
+    print "$delivery_id\t$total_ts\t$total_tv\t$ratio\t$total\n";
+}
+#close $fh_table;
+
+sub delivery_split {
+    my ($delivery_list, $del_ref_hash) = @_;
+    for (@$delivery_list) {
+        my ($delivery_id, $tbi_id, $type_id) = split /\:/, $_;
+        $del_ref_hash->{$tbi_id}=$delivery_id;
+    }
+}
+
+sub read_config {
+    my ($file, $hash_ref) = @_;
+    open my $fh, '<:encoding(UTF-8)', $file or die;
+    while (my $row = <$fh>) {
+        chomp $row; 
+        if ($row =~ /^#/) {next;}
+        if (length($row) == 0) {next;}
+        my ($key, $value) = split /\=/, $row;
+        $key = trim($key);
+        $value = trim ($value);
+        $hash_ref->{$key}=$value;
+    }
+    close $fh;
+}
+
+sub trim {
+    my @result = @_;
+    foreach (@result) {
+        s/^\s+//;
+        s/\s+$//;
+    }
+
+    return wantarray ? @result:$result[0];
+}
+
+sub checkFile {
+    my $file = shift;
+    if ( !-f $file) {
+        die "ERROR! not found <$file>\n";
+    }
+}
+
+sub printUsage {
+    print "perl $0 <in.sample.config> <in.pipe.config> \n";
+    exit;
+}

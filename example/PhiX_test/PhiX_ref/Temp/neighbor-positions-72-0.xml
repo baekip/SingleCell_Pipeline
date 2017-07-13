@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<SortedReference>
+  <FormatVersion>8</FormatVersion>
+  <SoftwareVersion>iSAAC-03.16.12.05</SoftwareVersion>
+  <Permutations>
+    <Permutation Name="ABCD">
+      <Masks Width="0" SeedLength="72">
+        <Mask Mask="0">
+          <File>/TBI/Share/HumanTeam/BioPipeline/Isaac_Pipeline_v1/example/PhiX_test/PhiX_ref/Temp/neighbor-positions-72-0.dat</File>
+          <Kmers>
+            <Total>5315</Total>
+          </Kmers>
+        </Mask>
+      </Masks>
+    </Permutation>
+  </Permutations>
+</SortedReference>

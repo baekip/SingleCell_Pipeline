@@ -1,0 +1,4 @@
+[[11],[],[TL],[280]]
+Reference	hg19
+Read length	150 x 2
+Coverage uniformity (10X)	กร 90%

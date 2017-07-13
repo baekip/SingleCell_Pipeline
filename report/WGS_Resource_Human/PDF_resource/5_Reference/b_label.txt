@@ -1,0 +1,26 @@
+
+
+
+
+1. Li, H.  Durbin, R. Fast and accurate short read alignment with Burrows-Wheeler transform. Bioinformatics 25, 1754-1760(2009).
+
+
+2. Li, H. et al. The Sequence Alignment/Map format and SAMtools. Bioinformatics 25, 2078- 2079(2009).
+
+
+3. Quinlan, A. R. & Hall, I. M. BEDTools: a flexible suite of utilities for comparing genomic features. Bioinfomatics 26, 841-842(2010).
+
+
+4. DePristo, M.A. et al. A framework for variation discovery and genotyping using next- generation DNA sequencing data. Nature Genetics 43, 491-498(2011).
+
+
+5. Cingolani, P. et al. A program for annotating and predicting the effects of single nucleotide polymorphisms, SnpEff: SNPs in the genome of Drosophila melanogaster strain w1118; iso- 2; iso-3. Fly (Austin) 6, 80-92(2012).
+
+
+6. Garcia-Alcalde F. et al. Qualimap: evaluating next-generation sequencing alignment data. Bioinformatics.28, 2678-2679(2012).
+
+
+7. Kristian Cibulskis et al. Sensitive detection of somatic point mutations in impure and heterogeneous cancer sample. Nature biotechnology 31, 213-219 (2013)
+
+
+8. Alberto Magi, Lorenzo Tattini et al. EXCAVATOR: detecting copy number variants from whole-exome sequencing data. Genome Biology 14, R120 (2013)

@@ -1,0 +1,5 @@
+[[12]]
+Delivery ID	Sample ID	Sequence read	Deduplication read(%)	Mapping read (%)	On target read (%)
+G5175	TN1507D0293	57608116	97.53	99.55	77.66
+G5261	TN1507D0294	64323234	97.86	99.48	75.58
+G5276	TN1507D0295	65646452	97.95	99.53	75.93

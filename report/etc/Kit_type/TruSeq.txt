@@ -1,0 +1,8 @@
+[[11],[],[TL],[280]]
+Reference	hg19
+Library Prep Kit	TruSeq Exome Enrichment Kit
+Read length	101 x 2
+Target size	62Mb
+Number of target genes	20,794
+Number of probes	340,427
+Coverage uniformity (10X)	กร 90%

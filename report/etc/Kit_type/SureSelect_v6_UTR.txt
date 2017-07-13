@@ -1,0 +1,7 @@
+[[11],[],[TL],[280]]
+Reference	hg19
+Exome Kit	SureSelect V6 + UTR
+Target size	89Mb
+Number of genes	21,522
+Number of target exons	359,555
+Coverage uniformity (10X)	>= 90%

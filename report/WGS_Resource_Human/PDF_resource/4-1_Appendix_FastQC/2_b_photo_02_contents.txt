@@ -1,0 +1,4 @@
+[[9]]
+¡Ü This figure shows an overview of the GC content of each base position in a file.
+¡Ü X-axis: Position in reads (bp)
+¡Ü Y-axis: GC rate of each base position

@@ -1,0 +1,7 @@
+[[11],[],[TL],[280]]
+Reference	hg19
+Library Prep Kit	SureSelect XT V6
+Read length	101 x 2
+Target size	58Mb
+Number of probes	738,690
+Coverage uniformity (10X)	กร 90%

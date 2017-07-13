@@ -1,0 +1,6 @@
+[[9]]
+¡Ü The HEADER contains meta-information lines that provide supplemental information about variants contained in the BODY of file.
+¡Ü Body: Data lines are tab-delimited and list information about individual variants and associated genotypes across samples. The first 8 fields (Figure 1) are required to be listed in the VCF column header line. Some of these fields require non-null values (see Table 6) for each record. For the remaining fixed fields, even if the field does not have an associated value, it still needs to be specified with a missing value identifier ("." in VCF 4.1). Subsequent fields are optional.
+¡Ü Fixed/Optional fields: The field contains a colon-separated list of all pre-defined FORMAT sub-fields (same as ID in a FORMAT declaration) that are applicable to all samples that follow.
+¡Ü INFO/FORMAT/Filter meta-Information:  optional fields that have to be declared in the HEADER if they are being referred to in the BODY of file. Different keys that can be used to define them are described in Table 3. All three fields do not use the same set of keys. Please refer to individual field definitions for further details.
+ 

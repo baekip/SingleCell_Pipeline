@@ -1,0 +1,35 @@
+[[9.5,9.5],[],[TL,l,l],[88]]
+CHROM	Chromosome
+POS	Position
+ID	Identifer
+REF	Reference base(s)
+ALT	Alteration base(s)
+QUAL	Quality
+FILTER	Filter status
+INFO	Additional information
+AC 	Allele count in genotypes, for each ALT allele, in the same order as listed
+AF 	Allele frequency for each ALT allele in the same order as listed
+AN 	Total number of alleles in called genotypes
+BaseQRankSum	Z-score from Wilcoxon rank sum test of Alt Vs. Ref base qualities
+DB 	dbSNP membership
+DP 	Combined depth across samples, e.g. DP=154
+DS	Were any of the samples downsampled?
+Dels	Fraction of Reads Containing Spanning Deletions
+FS	Phred-scaled p-value using Fisher
+HaplotypeScore	Consistency of the site with at most two segregating haplotypes
+InbreedingCoeff	Inbreeding coefficient as estimated from the genotype likelihoods per-sample when compared against the Hardy-Weinberg expectation
+MLEAC	Maximum likelihood expectation (MLE) for the allele counts (not necessarily the same as the AC)
+MLEAF	Maximum likelihood expectation (MLE) for the allele frequency (not necessarily the same as the AF)
+MQ	RMS mapping quality
+MQ0	Total Mapping Quality Zero Reads
+MQRankSum	Z-score From Wilcoxon rank sum test of Alt vs. Ref read mapping qualities
+QD	Variant Confidence/Quality by Depth
+RPA	Number of times tandem repeat unit is repeated, for each allele (including reference)
+RU	Tandem repeat unit (bases)
+ReadPosRankSum	Z-score from Wilcoxon rank sum test of Alt vs. Ref read position bias
+STR	Variant is a short tandem repeat
+AD	Allelic depths for the ref and alt alleles in the order listed
+DP	Approximate read depth
+GQ	Genotype quality
+GT	Genotype
+PL	Normalized, Phred-scaled likelihoods for genotypes as defined in the VCF specification

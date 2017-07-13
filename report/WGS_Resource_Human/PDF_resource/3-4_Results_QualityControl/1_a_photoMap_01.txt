@@ -1,0 +1,4 @@
+[[15,10],[],[],[70,70]]
+Sample ID	Pair Num	Per base qual	GC contents	Duplication
+Sample1	1	<img:aa/duplication_levels.png>	<img:aa/per_base_gc_content.png>	<img:aa/per_sequence_gc_content.png>
+Sample2	2	<img:aa/kmer_profiles.png>	<img:aa/per_base_gc_content.png>	<img:aa/per_base_quality.png>

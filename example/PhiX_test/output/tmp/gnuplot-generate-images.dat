@@ -1,0 +1,290 @@
+
+reset
+set terminal gif medium size NaN,600 \
+    #ffffff #000000 #404040 #ff0000 #00ff00 #0000ff #000000 #000000 #0000ff #000000 #000000 #777777;  
+set output '/TBI/Share/HumanTeam/BioPipeline/Isaac_Pipeline_v1/example/PhiX_test/output/Reports/gif/XXXXXXXXX/all/all/all/s_1_0001_Pf_mismatches.gif';
+set x2range [NaN:NaN];
+set xrange [NaN:NaN];
+set yrange [0:20];
+set ytics nomirror 5;
+unset xlabel;
+set x2label "Cycle Number";
+unset xtics;
+set x2tics;
+set grid ytics x2tics
+set boxwidth 0.5;
+
+set title "XXXXXXXXX/all/all/all/s_1_0001_Pf_mismatches.gif \n Uniquely aligned fragments: \
+R1:2,468 \
+R2:2,446 \
+";
+set nokey;
+set style fill solid 1.0 noborder;
+set size 1.0, 1.0;
+
+set multiplot
+set size 1.0, 0.5;
+unset xlabel;
+set origin 0.0, 0.5;
+set bmargin 0;
+unset tmargin;
+
+
+set ylabel "% mismatches";
+plot '-' using 1:2 with boxes lt 1;
+e
+
+
+set yrange [20:0];
+unset x2label;
+set xlabel "Cycle Number";
+set xtics;
+unset x2tics;
+set grid ytics xtics
+
+set origin 0.0, 0.0;
+set tmargin 0;
+unset bmargin;
+
+set ylabel "% blanks";
+unset title
+plot '-' using 1:2 with boxes lt 3;
+e
+
+unset multiplot
+
+
+reset
+set terminal gif medium size 84,84 \
+    #ffffff #000000 #404040 #ff0000 #00ff00 #0000ff #000000 #000000 #0000ff #000000 #000000 #777777;  
+set output '/TBI/Share/HumanTeam/BioPipeline/Isaac_Pipeline_v1/example/PhiX_test/output/Reports/gif/XXXXXXXXX/all/all/all/s_1_0001_Pf_mismatches_thumb.gif';
+set xrange [NaN:NaN];
+set yrange [0:20];
+unset ytics;
+unset xlabel;
+unset xtics;
+set nokey;
+set size 1.0, 1.0;
+set lmargin 0;
+set rmargin 0;
+set tmargin 0;
+set bmargin 0;
+
+set multiplot
+set size 1.0, 0.5;
+set origin 0.0, 0.5;
+
+plot '-' using 1:2 with impulses lt 1;
+e
+
+
+set yrange [20:0];
+set origin 0.0, 0.0;
+plot '-' using 1:2 with impulses lt 3;
+e
+
+unset multiplot
+
+        
+reset
+set terminal gif medium size NaN,600 \
+    #ffffff #000000 #404040 #ff0000 #00ff00 #0000ff #000000 #000000 #0000ff #000000 #000000 #777777;  
+set output '/TBI/Share/HumanTeam/BioPipeline/Isaac_Pipeline_v1/example/PhiX_test/output/Reports/gif/XXXXXXXXX/all/all/all/s_1_0001_Raw_mismatches.gif';
+set x2range [NaN:NaN];
+set xrange [NaN:NaN];
+set yrange [0:20];
+set ytics nomirror 5;
+unset xlabel;
+set x2label "Cycle Number";
+unset xtics;
+set x2tics;
+set grid ytics x2tics
+set boxwidth 0.5;
+
+set title "XXXXXXXXX/all/all/all/s_1_0001_Raw_mismatches.gif \n Uniquely aligned fragments: \
+R1:2,468 \
+R2:2,446 \
+";
+set nokey;
+set style fill solid 1.0 noborder;
+set size 1.0, 1.0;
+
+set multiplot
+set size 1.0, 0.5;
+unset xlabel;
+set origin 0.0, 0.5;
+set bmargin 0;
+unset tmargin;
+
+
+set ylabel "% mismatches";
+plot '-' using 1:2 with boxes lt 1;
+e
+
+
+set yrange [20:0];
+unset x2label;
+set xlabel "Cycle Number";
+set xtics;
+unset x2tics;
+set grid ytics xtics
+
+set origin 0.0, 0.0;
+set tmargin 0;
+unset bmargin;
+
+set ylabel "% blanks";
+unset title
+plot '-' using 1:2 with boxes lt 3;
+e
+
+unset multiplot
+
+
+reset
+set terminal gif medium size 84,84 \
+    #ffffff #000000 #404040 #ff0000 #00ff00 #0000ff #000000 #000000 #0000ff #000000 #000000 #777777;  
+set output '/TBI/Share/HumanTeam/BioPipeline/Isaac_Pipeline_v1/example/PhiX_test/output/Reports/gif/XXXXXXXXX/all/all/all/s_1_0001_Raw_mismatches_thumb.gif';
+set xrange [NaN:NaN];
+set yrange [0:20];
+unset ytics;
+unset xlabel;
+unset xtics;
+set nokey;
+set size 1.0, 1.0;
+set lmargin 0;
+set rmargin 0;
+set tmargin 0;
+set bmargin 0;
+
+set multiplot
+set size 1.0, 0.5;
+set origin 0.0, 0.5;
+
+plot '-' using 1:2 with impulses lt 1;
+e
+
+
+set yrange [20:0];
+set origin 0.0, 0.0;
+plot '-' using 1:2 with impulses lt 3;
+e
+
+unset multiplot
+
+        
+reset
+set terminal gif medium size NaN,600 \
+    #ffffff #000000 #404040 #ff0000 #00ff00 #0000ff #000000 #000000 #0000ff #000000 #000000 #777777;  
+set output '/TBI/Share/HumanTeam/BioPipeline/Isaac_Pipeline_v1/example/PhiX_test/output/Reports/gif/XXXXXXXXX/all/all/all/s_1_0001_Pf_mismatch-fragments.gif';
+set xrange [NaN:NaN];
+set yrange [0:100];
+set ytics nomirror 10;
+set xtics nomirror;
+set boxwidth 0.5;
+
+set title "XXXXXXXXX/all/all/all/s_1_0001_Pf_mismatch-fragments.gif \n Uniquely aligned fragments: \
+R1:2,468 \
+R2:2,446 \
+";
+set xlabel "Cycle Number";
+set ylabel "% uniquely aligned fragments with 'x' mismatches or less";
+set key left bottom below
+set style fill solid 1.0 noborder
+
+plot '-' using 1:2 title '4 or less' with boxes lt 7, \
+     '-' using 1:2 title '3 or less' with boxes lt 2, \
+     '-' using 1:2 title '2 or less' with boxes lt 3, \
+     '-' using 1:2 title '1 or less' with boxes lt 1, \
+     '-' using 1:2 title '0 mismatches' with boxes lt 9;
+e
+e
+e
+e
+e
+
+reset
+set terminal gif medium size 84,84 \
+    #ffffff #000000 #404040 #ff0000 #00ff00 #0000ff #000000 #000000 #0000ff #000000 #000000 #777777;  
+set output '/TBI/Share/HumanTeam/BioPipeline/Isaac_Pipeline_v1/example/PhiX_test/output/Reports/gif/XXXXXXXXX/all/all/all/s_1_0001_Pf_mismatch-fragments_thumb.gif';
+set xrange [NaN:NaN];
+set yrange [0:100];
+set noytics;
+set noxtics;
+set nokey;
+set notitle;
+set noxlabel;
+set noylabel;
+set lmargin 0;
+set rmargin 0;
+set tmargin 0;
+set bmargin 0;
+
+plot '-' using 1:2 with impulses lt 7, \
+     '-' using 1:2 with impulses lt 2, \
+     '-' using 1:2 with impulses lt 3, \
+     '-' using 1:2 with impulses lt 1, \
+     '-' using 1:2 with impulses lt 9;
+e
+e
+e
+e
+e
+
+reset
+set terminal gif medium size NaN,600 \
+    #ffffff #000000 #404040 #ff0000 #00ff00 #0000ff #000000 #000000 #0000ff #000000 #000000 #777777;  
+set output '/TBI/Share/HumanTeam/BioPipeline/Isaac_Pipeline_v1/example/PhiX_test/output/Reports/gif/XXXXXXXXX/all/all/all/s_1_0001_Raw_mismatch-fragments.gif';
+set xrange [NaN:NaN];
+set yrange [0:100];
+set ytics nomirror 10;
+set xtics nomirror;
+set boxwidth 0.5;
+
+set title "XXXXXXXXX/all/all/all/s_1_0001_Raw_mismatch-fragments.gif \n Uniquely aligned fragments: \
+R1:2,468 \
+R2:2,446 \
+";
+set xlabel "Cycle Number";
+set ylabel "% uniquely aligned fragments with 'x' mismatches or less";
+set key left bottom below
+set style fill solid 1.0 noborder
+
+plot '-' using 1:2 title '4 or less' with boxes lt 7, \
+     '-' using 1:2 title '3 or less' with boxes lt 2, \
+     '-' using 1:2 title '2 or less' with boxes lt 3, \
+     '-' using 1:2 title '1 or less' with boxes lt 1, \
+     '-' using 1:2 title '0 mismatches' with boxes lt 9;
+e
+e
+e
+e
+e
+
+reset
+set terminal gif medium size 84,84 \
+    #ffffff #000000 #404040 #ff0000 #00ff00 #0000ff #000000 #000000 #0000ff #000000 #000000 #777777;  
+set output '/TBI/Share/HumanTeam/BioPipeline/Isaac_Pipeline_v1/example/PhiX_test/output/Reports/gif/XXXXXXXXX/all/all/all/s_1_0001_Raw_mismatch-fragments_thumb.gif';
+set xrange [NaN:NaN];
+set yrange [0:100];
+set noytics;
+set noxtics;
+set nokey;
+set notitle;
+set noxlabel;
+set noylabel;
+set lmargin 0;
+set rmargin 0;
+set tmargin 0;
+set bmargin 0;
+
+plot '-' using 1:2 with impulses lt 7, \
+     '-' using 1:2 with impulses lt 2, \
+     '-' using 1:2 with impulses lt 3, \
+     '-' using 1:2 with impulses lt 1, \
+     '-' using 1:2 with impulses lt 9;
+e
+e
+e
+e
+e

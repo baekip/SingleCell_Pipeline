@@ -1,0 +1,3 @@
+[[20,16]]
+3.2 Annotated Variants
+	3.2.1 Number Variants By Type

@@ -1,0 +1,5 @@
+[[10]]
+¡Ü Sample ID: ID provided from customer
+¡Ü SNP: Number of Single-Nucleotide Polymophism
+¡Ü INS: Number of Insertion mutation, which is the addition of one or more nucletide base pairs into a DNA sequence
+¡Ü DEL: Number of Deletion mutation in which a part of a chromosome or sequence of DNA is missing

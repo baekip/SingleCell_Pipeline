@@ -1,0 +1,5 @@
+[[10,10]]
+Sample ID	SNP	INS	DEL	Total
+TN	1	1	1	1
+TN	1	1	1	1
+TN	1	1	1	1

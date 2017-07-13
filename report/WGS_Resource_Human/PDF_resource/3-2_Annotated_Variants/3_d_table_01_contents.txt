@@ -1,0 +1,14 @@
+[[9,8.5]]
+* If the variant is applicable to multiple regions, the variant will be counted repeatedly.
+	● Sample ID: ID provided from customer
+	● DOWNSTREAM: Downstream of a gene (default length:5K bases)
+	● EXON: The variant hits a gene
+	● INTERGENIC: The variant is in an intergenic region
+	● INTRON: Variant hits and intron. Technically, hits no exon in the transcript
+	● SPLICE_SITE_ACCEPTOR: The variant hits a splice acceptor site
+	● SPLICE_SITE_DONOR: The variant hits a splice donor site
+	● SPLICE_SITE_REGION: The variant hits a splice region site
+	● TRANSCRIPT: The variant hits a transcript
+	● UPSTREAM: Upstream of a gene (default length: 5K bases)
+	● UTR_3_PRIME: Variant hits 3'UTR region
+	● UTR_5_PRIME: Variant hits 5'UTR region

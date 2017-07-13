@@ -1,0 +1,4 @@
+[[9]]
+¡Ü This graph shows the distribution of GC content per mapped read.
+¡Ü X-axis: GC content (%)
+¡Ü Y-axis: Fraction of reads

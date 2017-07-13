@@ -1,0 +1,6 @@
+[[11],[],[TL],[280]]
+Reference	hg19
+Library Prep Kit	SureSelect XT V4 + UTR 
+Target size	71Mb
+Number of probes	789,140
+Coverage uniformity (10X)	กร 90%

@@ -1,0 +1,7 @@
+[[11],[],[TL],[280]]
+Reference	hg19
+Library Prep Kit	SureSelect Human All Exon 50Mb
+Read length	101 x 2
+Target size	50Mb
+Number of probes	563,831
+Coverage uniformity (10X)	กร 90%

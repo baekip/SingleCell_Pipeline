@@ -1,0 +1,30 @@
+[[16,12]]
+
+бс Genome sequence analysis list of Theragen Etex
+	 - Quality control for sequencing data
+	 - Sequence Alignment
+	 - Sequence Mapping
+	 - Variants Calling
+	 - Variants Annotation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

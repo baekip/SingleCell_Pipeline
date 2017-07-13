@@ -1,0 +1,5 @@
+[[9]]
+¡Ü This plot consists of two figures. The upper figure provides the coverage distribution (red line) and coverage deviation across the reference sequence. The coverage is measured in X. The lower figure shows GC content across reference (black line) together with its average value (red dotted line).
+¡Ü X-axis: Position
+¡Ü Y-axis of upper figure: Coverage (X)
+¡Ü Y-axis of lower figure: GC (%) 
