@@ -1,3 +1,0 @@
-[[20],[16]]
-3.4 Quality Controls
-	3.4.1 FastQC Results

@@ -4,7 +4,7 @@
 #############################################################
 package Utils;
 use Exporter qw(import);
-our @EXPORT_OK = qw(read_config trim checkFile checkDir make_dir cp_file cmd_system);
+our @EXPORT_OK = qw(read_config trim checkFile checkDir make_dir cp_file cmd_system eagle_cmd_system);
 #############################################################
 ##sub
 ##############################################################
@@ -16,7 +16,9 @@ sub read_config{
         if ($row =~ /^#/) {next;}
         if (length($row) == 0) {next;}
         my ($key, $value) = split /\=/, $row;
+        $key =~ s/(\#+)(.*)//g;
         $key = trim($key);
+        $value =~ s/(\#+)(.*)//g;
         $value = trim($value);
         $hash_ref->{$key}=$value;
     }
@@ -27,6 +29,18 @@ sub cmd_system {
     my ($sh_path, $hostname, $sh_file) = @_;
     if ($hostname eq 'eagle'){
         system (sprintf ("qsub -V -e %s -o %s -q isaac.q -S /bin/bash %s", $sh_path, $sh_path, $sh_file));
+    }elsif ($hostname eq 'cat'){
+        system (sprintf ("qsub -V -e %s -o %s -l hostname=%s -S /bin/bash %s", $sh_path, $sh_path, $hostname, $sh_file));
+    }else{
+        system (sprintf ("qsub -V -e %s -o %s -q all.q -S /bin/bash %s", $sh_path, $sh_path, $sh_file));
+    }
+#    system (sprintf ("qsub -V -e %s -o %s -l hostname=%s -S /bin/bash %s", $sh_path, $sh_path, $hostname, $sh_file));
+}
+
+sub eagle_cmd_system {
+    my ($sh_path, $hostname, $sh_file) = @_;
+    if ($hostname eq 'eagle'){
+        system (sprintf ("qsub -V -e %s -o %s -q isaac.q\@eagle.ptbio.kr -S /bin/bash %s", $sh_path, $sh_path, $sh_file));
     }elsif ($hostname eq 'cat'){
         system (sprintf ("qsub -V -e %s -o %s -l hostname=%s -S /bin/bash %s", $sh_path, $sh_path, $hostname, $sh_file));
     }else{

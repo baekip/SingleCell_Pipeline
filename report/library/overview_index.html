@@ -1,0 +1,373 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>[Institutue]</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../images/Envision.css" type="text/css" />
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body>
+  <div id="wrap">
+    <div id="header">
+      <h1 id="logo-text">Theragenetex Inc.</h1>
+      <h2 id="slogan">scRNA Analysis Report</h2>
+      <div id="header-links">
+        <p> <a href="index.html">Home</a> | <a href="http://www.theragenetex.com/bio/company/contact-us/">Contact</a> | <a href="http://www.theragenetex.com">Site Map</a> </p>
+      </div>
+    </div>
+    <div  id="menu">
+      <ul>
+        <li id="current"><a href=".././index.html">Home</a></li>
+        <li><a href="../overview/overview_index.html">Overview</a></li>
+        <li><a href="../samples/samples_index.html">Samples</a></li>
+        <li><a href="../mapping/mapping_index.html">Mapping</a></li>
+        <li><a href="../10XGenomics_result/10XGenomics_index.html">10X Genomics Report</a></li>
+        <li><a href="../post_processing/postprocessing_index.html">Post Processing</a></li>
+        <li class="last"><a href="../help/help_index.html">Help</a></li>
+      </ul>
+    </div>
+    <div id="content-wrap">
+      <div id="sidebar">
+        <h1>Search Box</h1>
+        <form action="#" class="searchform">
+          <p>
+            <input name="search_query" class="textbox" type="text" />
+            <input name="search" class="button" value="Search" type="submit" />
+          </p>
+        </form>
+        <h1>Sidebar Menu</h1>
+        <ul class="sidemenu">
+          <li><a href="./overview_index.html">Overview</a></li>
+          <li><a href="#Files">Files</a></li>
+          <li><a href="#Sequencing">Sequencing</a></li>
+          <li><a href="#Mapping">Mapping</a></li>
+          <li><a href="#Detected genes per cell">Detected genes per cell</a></li>
+          <li><a href="#Expression sum per cell">Expression sum per cell</a></li>
+        </ul>
+        <h1>Our Vision</h1>
+        <div class="left-box">
+          <p>&quot;A global leader specializing in human welfare and healthcare through genome-based personalized medicine.&quot; </p>
+          <p class="align-right">- Theragene Etex</p>
+        </div>
+      </div>
+      <div id="main"> <a name="Files"></a>
+        <h1>Files</h1>
+        <code><p>
+          <ul>
+            <li><h3>Sequencing Statistics File [<a href="./Sequencing_Statistics_Result.xls">File</a>]</h3></li>
+            <li><h3>Alignmnet Statistics File [<a href="./alignment.statstics.xls">File</a>]</h3></li>
+          </ul></p>
+        </code>
+  
+        <a name="Sequencing"></a><h1>Sequencing</h1>
+         <script type="text/javascript">
+        google.charts.load('current', {'packages':['bar']});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+          var Sequencing = google.visualization.arrayToDataTable([
+            ['Delivery ID', 'Index(Gb)', 'R1(Gb)', 'R2(Gb)'],
+            ['Delivery01', 8.87, 28.84, 108.69],
+            ['Delivery02', 9.90, 32.17, 121.26],
+            ['Delivery03', 8.69, 28.26, 106.50],
+            ['Delivery04', 9.15, 29.75, 112.12],
+            ]);
+          var options = {
+            chart: {
+              title: 'Summary for Produced Sequencing Data',
+              subtitle: 'Sequencing Statistics',
+            },
+            legend: { position: 'top', maxLines: 3 },
+            bar: { groupWidth: '75%' },
+            isStacked: true,
+          };
+
+            var chart = new google.charts.Bar(document.getElementById('sequencing'));
+            chart.draw(Sequencing, google.charts.Bar.convertOptions(options));
+          }
+
+          </script>
+          <div id="sequencing" style="width: 1200px; height: 450px;"></div>
+
+          <a name="Mapping"></a><h1>Mapping</h1>
+           <script type="text/javascript">
+        google.charts.load('current', {'packages':['bar']});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+          var Sequencing = google.visualization.arrayToDataTable([
+            ['Delivery ID', 'Exonic Regions', 'Transcriptome', 'Intronic Regions', 'Intergenic Regions'],
+            ['Delivery01', 74.2, 70.5, 10.7, 3.9],
+            ['Delivery02', 73.3, 69.5, 10.8, 4.2],
+            ['Delivery03', 74.5, 70.9, 11.7, 3.9],
+            ['Delivery04', 74.2, 70.5, 10.0, 4.0],
+            ]);
+            var options = {
+              chart: {
+                title: 'Mapping Summary for Produced Sequencing Data',
+                subtitle: 'Alignment Statistics',
+              },
+              bars: 'vertical',
+              vAxis: {format: 'decimal'},
+              height: 400
+            };
+            var chart = new google.charts.Bar(document.getElementById('mapping'));
+            chart.draw(Sequencing, google.charts.Bar.convertOptions(options));
+          }
+          </script>
+          <div id="mapping" style="width: 1200px; height: 450px;"></div>
+    
+          <a name="Detected genes per cell"></a><h1>Detected genes per cell</h1>
+                <head>
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+      <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawBoxPlot);
+      function drawBoxPlot() {
+        var array = [
+        ['Min', 2767,2483,1648,2666],
+        ['1st Quart', 6457,5021,6710,5770],
+        ['Median', 6944,6356,7325,7002],
+        ['Mean', 6815,6080,7094,6577],
+        ['3rd Quart', 7442,7107,7896,7679],
+        ['Max', 10254,10556,10975,10300]
+        ];
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'x');
+        data.addColumn('number', 'Delivery01');
+        data.addColumn('number', 'Delivery02');
+        data.addColumn('number', 'Delivery03');
+        data.addColumn('number', 'Delivery04');
+
+        data.addColumn({id:'max', type:'number', role:'interval'});
+        data.addColumn({id:'min', type:'number', role:'interval'});
+        data.addColumn({id:'firstQuartile', type:'number', role:'interval'});
+        data.addColumn({id:'median', type:'number', role:'interval'});
+        data.addColumn({id:'thirdQuartile', type:'number', role:'interval'});
+
+        data.addRows(getBoxPlotValues(array));
+
+      /**
+       * Takes an array of input data and returns an
+       * array of the input data with the box plot
+       * interval data appended to each row.
+       */
+      function getBoxPlotValues(array) {
+
+        for (var i = 0; i < array.length; i++) {
+
+          var arr = array[i].slice(1).sort(function (a, b) {
+            return a - b;
+          });
+
+          var max = arr[arr.length - 1];
+          var min = arr[0];
+          var median = getMedian(arr);
+
+          // First Quartile is the median from lowest to overall median.
+          var firstQuartile = getMedian(arr.slice(0, 4));
+
+          // Third Quartile is the median from the overall median to the highest.
+          var thirdQuartile = getMedian(arr.slice(3));
+
+          array[i][5] = max;
+          array[i][6] = min
+          array[i][7] = firstQuartile;
+          array[i][8] = median;
+          array[i][9] = thirdQuartile;
+        }
+        return array;
+      }
+
+      /*
+       * Takes an array and returns
+       * the median value.
+       */
+      function getMedian(array) {
+        var length = array.length;
+
+        /* If the array is an even length the
+         * median is the average of the two
+         * middle-most values. Otherwise the
+         * median is the middle-most value.
+         */
+        if (length % 2 === 0) {
+          var midUpper = length / 2;
+          var midLower = midUpper - 1;
+
+          return (array[midUpper] + array[midLower]) / 2;
+        } else {
+          return array[Math.floor(length / 2)];
+        }
+      }
+
+      var options = {
+          title:'scRNA Cell Overview',
+          height: 500,
+          legend: {position: 'none'},
+          hAxis: {
+            gridlines: {color: '#fff'}
+          },
+          lineWidth: 0,
+          series: [{'color': '#D3362D'}],
+          intervals: {
+            barWidth: 1,
+            boxWidth: 1,
+            lineWidth: 2,
+            style: 'boxes'
+          },
+          interval: {
+            max: {
+              style: 'bars',
+              fillOpacity: 1,
+              color: '#777'
+            },
+            min: {
+              style: 'bars',
+              fillOpacity: 1,
+              color: '#777'
+            }
+          }
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('detected_genes'));
+
+      chart.draw(data, options);
+    }
+    </script>
+  </head>
+  <body>
+    <div id="detected_genes" style="width: 900px; height: 500px;"></div>
+  </body>
+          <a name="Expression sum per cell"></a><h1>Expression sum per cell</h1>
+                <head>
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+      <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawBoxPlot);
+      function drawBoxPlot() {
+        var array = [
+        ['Min', 11945, 11095, 13163, 12164],
+        ['1st Quart', 47124, 26121, 48369, 34208],
+        ['Median', 57051, 44668, 60844, 53560],
+        ['Mean', 57566, 44686, 61199, 52610],
+        ['3rd Quart', 68390, 57665, 74326, 68243],
+        ['Max', 183063, 186517, 214337, 172379]
+        ];
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'x');
+        data.addColumn('number', 'Delivery01');
+        data.addColumn('number', 'Delivery02');
+        data.addColumn('number', 'Delivery03');
+        data.addColumn('number', 'Delivery04');
+
+        data.addColumn({id:'max', type:'number', role:'interval'});
+        data.addColumn({id:'min', type:'number', role:'interval'});
+        data.addColumn({id:'firstQuartile', type:'number', role:'interval'});
+        data.addColumn({id:'median', type:'number', role:'interval'});
+        data.addColumn({id:'thirdQuartile', type:'number', role:'interval'});
+
+        data.addRows(getBoxPlotValues(array));
+
+      /**
+       * Takes an array of input data and returns an
+       * array of the input data with the box plot
+       * interval data appended to each row.
+       */
+      function getBoxPlotValues(array) {
+
+        for (var i = 0; i < array.length; i++) {
+
+          var arr = array[i].slice(1).sort(function (a, b) {
+            return a - b;
+          });
+
+          var max = arr[arr.length - 1];
+          var min = arr[0];
+          var median = getMedian(arr);
+
+          // First Quartile is the median from lowest to overall median.
+          var firstQuartile = getMedian(arr.slice(0, 4));
+
+          // Third Quartile is the median from the overall median to the highest.
+          var thirdQuartile = getMedian(arr.slice(3));
+
+          array[i][5] = max;
+          array[i][6] = min
+          array[i][7] = firstQuartile;
+          array[i][8] = median;
+          array[i][9] = thirdQuartile;
+        }
+        return array;
+      }
+
+      /*
+       * Takes an array and returns
+       * the median value.
+       */
+      function getMedian(array) {
+        var length = array.length;
+
+        /* If the array is an even length the
+         * median is the average of the two
+         * middle-most values. Otherwise the
+         * median is the middle-most value.
+         */
+        if (length % 2 === 0) {
+          var midUpper = length / 2;
+          var midLower = midUpper - 1;
+
+          return (array[midUpper] + array[midLower]) / 2;
+        } else {
+          return array[Math.floor(length / 2)];
+        }
+      }
+
+      var options = {
+          title:'scRNA Cell Overview',
+          height: 500,
+          legend: {position: 'none'},
+          hAxis: {
+            gridlines: {color: '#fff'}
+          },
+          lineWidth: 0,
+          series: [{'color': '#D3362D'}],
+          intervals: {
+            barWidth: 1,
+            boxWidth: 1,
+            lineWidth: 2,
+            style: 'boxes'
+          },
+          interval: {
+            max: {
+              style: 'bars',
+              fillOpacity: 1,
+              color: '#777'
+            },
+            min: {
+              style: 'bars',
+              fillOpacity: 1,
+              color: '#777'
+            }
+          }
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('expression_sum'));
+
+      chart.draw(data, options);
+    }
+    </script>
+  </head>
+  <body>
+    <div id="expression_sum" style="width: 900px; height: 500px;"></div>
+  </body>
+
+
+          <p><a href="http:www.theragenetex.com" target="_blank"><img src="../images/Theragene_low_CI.png" width="300" height="70" alt="firefox" class="float-right" /></a>
+            <br />
+          </div>
+        </div>
+        <div id="footer">
+          <p> &copy; 2006 <strong>Theragene Etex Bio Institute</strong> | Design by: <a href="www.theragenetex.com">styleshout</a> | Valid <a href="http://validator.w3.org/check?uri=referer">XHTML</a> | <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#">Home</a>&nbsp;|&nbsp; <a href="#">Sitemap</a>&nbsp;|&nbsp; <a href="#">RSS Feed</a> </p>
+        </div>
+  </div>
+</body>
+</html>

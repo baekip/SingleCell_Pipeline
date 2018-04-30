@@ -4,7 +4,7 @@
 #############################################################
 package Utils;
 use Exporter qw(import);
-our @EXPORT_OK = qw(read_config trim checkFile checkDir make_dir cp_file);
+our @EXPORT_OK = qw(read_config trim checkFile checkDir make_dir cp_file RoundXL num);
 #############################################################
 ##sub
 ##############################################################
@@ -16,7 +16,9 @@ sub read_config{
         if ($row =~ /^#/) {next;}
         if (length($row) == 0) {next;}
         my ($key, $value) = split /\=/, $row;
+        $key =~ s/(\#+)(.*)//g;
         $key = trim($key);
+        $value =~ s/(\#+)(.*)//g;
         $value = trim($value);
         $hash_ref->{$key}=$value;
     }
@@ -60,4 +62,21 @@ sub cp_file {
     my $cp_cmd = "cp $orig $target";
     system($cp_cmd);
 }
+
+sub RoundXL {
+    sprintf ("%.$_[1]f", $_[0]);
+}
+
+sub num {
+    my $cnum = shift;
+    if ($cnum =~ /\d\./){
+        return $cnum;
+    }
+    while ($cnum =~ s/(\d+)(\d{3})\b/$1,$2/) {
+        1;
+    }
+    my $result = sprintf "%s", $cnum;
+    return $result;
+}
+
 1;

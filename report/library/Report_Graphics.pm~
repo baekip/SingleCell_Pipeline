@@ -1,0 +1,147 @@
+#############################################################
+#Author: baekip
+#Date: 2017.2.2
+#############################################################
+package Report_Graphics;
+use Exporter qw(import);
+our @EXPORT_OK = qw(graphics_stack_hist);
+#############################################################
+##sub
+##############################################################
+
+sub graphics_stack_hist {
+    my ($fh_input, $title, $sub_title, @value) = @_;
+    print $fh_input "
+        <script type=\"text/javascript\">
+        google.charts.load('current', {'packages':['bar']});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+          var Sequencing = google.visualization.arrayToDataTable([
+          ";
+        foreach (@value) {
+            my @sub_value = split /\:/, $_;
+            print $fh_input "\t\t[";
+            foreach (@sub_value) {
+                if ($_ =~ /_|[A-Za-z]/){
+                    print $fh_input "\'$_\',";
+                }elsif ($_ =~ /^\d+\.\d+/){
+                    print $fh_input "$_,";
+                }
+            }
+            print $fh_input "],\n";
+        }
+        print $fh_input "
+        ]);
+          var options = {
+            chart: {
+              title: '$title',
+              subtitle: '$sub_title',
+            },
+            legend: { position: 'top', maxLines: 3 },
+            bar: { groupWidth: '75%' },
+            isStacked: true,
+          };
+
+            var chart = new google.charts.Bar(document.getElementById('$sub_title'));
+            chart.draw($sub_title, google.charts.Bar.convertOptions(options));
+          }
+
+          </script>
+          <div id=\"$sub_title\" style=\"width: 1200px; height: 450px;\"></div>
+          ";
+}
+
+sub graphics_clumn_hist {
+    my ($fh_input, @value) = @_;
+    print $fh_input "
+        <script type=\"text/javascript\">
+        google.charts.load('current', {'packages':['bar']});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+          var Sequencing = google.visualization.arrayToDataTable([";
+        foreach (@value) {
+            my @sub_value = split /\:/, $_;
+            print $fh_input "\t\t[".join(',', @sub_value)."],\n";
+        }
+        print $fh_input "
+        ]);
+            var options = {
+              chart: {
+                title: '$title',
+                subtitle: '$sub_title',
+              },
+              bars: 'vertical',
+              vAxis: {format: 'decimal'},
+              height: 400
+            };
+            var chart = new google.charts.Bar(document.getElementById('mapping'));
+            chart.draw(Sequencing, google.charts.Bar.convertOptions(options));
+          }
+          </script>
+          <div id=\"$sub_title\" style=\"width: 1200px; height: 450px;\"></div>
+
+
+        <div id=\"sidebar\">
+            <h1>Search Box</h1>
+            <form action=\"#\" class=\"searchform\">
+            <p>
+                <input name=\"search_query\" class=\"textbox\" type=\"text\" />
+                <input name=\"search\" class=\"button\" value=\"Search\" type=\"submit\" />
+            </p>
+        </form>
+        <h1>Sidebar Menu</h1>
+        <ul class=\"sidemenu\">";
+        
+        foreach my $id (@value) {
+            my ($ref, $title) = split /\:/, $id;
+            print $fh_input "<li><a href=\"$ref\">$title</a></li>\n";
+        }
+        
+        print $fh_input "</ul>
+        <h1>Our Vision</h1>
+        <div class=\"left-box\">
+            <p>&quot;A global leader specializing in human welfare and healthcare through genome-based personalized medicine.&quot; </p>
+            <p class=\"align-right\">- Theragene Etex</p>
+        </div>
+    </div>
+    ";
+}
+
+sub table_header {
+    my ($fh_input, $name, @value) = @_;
+    print $fh_input "<a name=\"$name\"></a>\n";
+    print $fh_input "<h1>$name</h1>\n";
+    print $fh_input "<table>\n";
+    print $fh_input "<tr>\n";
+    
+    for (my $i=0; $i<@value; $i++){
+        my $j = $i + 1;
+        if ($j == 1) {
+            print $fh_input "\t<th class=\"first\"><strong>$value[$i]<strong></th>\n";
+        }else{
+            print $fh_input "\t<th>$value[$i]</th>\n";
+        }
+    }
+}
+#table body
+sub table_body {
+    my ($fh_input, @value) = @_;
+    for (my $i=0; $i<@value; $i++){
+        my $j = $i+1;
+        my @tmp_value = split /\:/,$value[$i];
+        print $fh_input "\t</tr>\n";
+        if ($j % 2 == 1) {
+            print $fh_input "\t<tr class=\"row-a\">\n";
+        }elsif ($j % 2 == 0){
+            print $fh_input "\t<tr class=\"row-b\">\n";
+        }
+        print $fh_input "\t<td class=\"first\">$j</td>\n";
+        foreach my $sub_value (@tmp_value){
+            print $fh_input "\t\t<td>$sub_value</td>\n";
+        }
+    }
+    print $fh_input "\t</tr>\n";
+    print $fh_input "</table>\n";
+}
+
+1;

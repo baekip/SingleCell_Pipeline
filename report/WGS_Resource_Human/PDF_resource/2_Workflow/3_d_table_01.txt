@@ -1,8 +1,0 @@
-[[12],[],[TT,l,l,l],[130,70]]
-Software Information	Version	Description
-FastQC	0.10.1	Checking quality for sequence data
-Isaac\n(isaac-align)	iSAAC-03.16.12.05	Isaac Genome Alignment Software
-isaac variant caller	1.0.6	Isaac Variant Caller
-SAMtools	1.2	Converting from SAM format to sorted and indexed BAM (binary alignment map) files
-SnpEff	4.2	Annotating genetic variants and predicting their effects
-Qualimap	2.1	Facilitating the quality control of sequencing alignment and its derivatives like feature counts

@@ -49,8 +49,10 @@ my ($mapped_read, $mapped_percent) = split /\s/, $txt_contents{"number of mapped
 my $mapped_bases = $txt_contents{"number of mapped bases"};
 $mapped_bases =~ s/\s+bp//g;
 my $mean_insert_size = $txt_contents{"mean insert size"};
+$mean_insert_size =~ s/,//g;
 $mean_insert_size = RoundXL($mean_insert_size,2);
 my $std_insert_size = $txt_contents{"std insert size"};
+$std_insert_size =~ s/,//g;
 $std_insert_size = RoundXL($std_insert_size, 2);
 my $median_insert_size = $txt_contents{"median insert size"};
 my $mean_coverage = $txt_contents{"mean coverageData"};
@@ -61,8 +63,11 @@ $std_coverage =~ s/X//g;
 $std_coverage = RoundXL($std_coverage, 2);
 my $gc_percent = $txt_contents{"GC percentage"};
 
-print $fh_parse "Sample ID\tReference(bp)\tMapped reads\tMapped bases\tMean insert size\tstd insert size\tMean Coverage\tstd coverage\tGC(%)\n";
-print $fh_parse "$sample\t$reference_bases\t$mapped_read\t$mapped_bases\t$mean_insert_size\t$std_insert_size\t$mean_coverage\t$std_coverage\t$gc_percent\n";
+print $fh_parse "Sample ID\tReference(bp)\tMapped reads\tMapped bases\tMedian insert size\tMean Coverage\tstd coverage\tGC(%)\n";
+print $fh_parse "$sample\t$reference_bases\t$mapped_read\t$mapped_bases\t$median_insert_size\t$mean_coverage\t$std_coverage\t$gc_percent\n";
+
+#print $fh_parse "Sample ID\tReference(bp)\tMapped reads\tMapped bases\tMean insert size\tstd insert size\tMean Coverage\tstd coverage\tGC(%)\n";
+#print $fh_parse "$sample\t$reference_bases\t$mapped_read\t$mapped_bases\t$mean_insert_size\t$std_insert_size\t$mean_coverage\t$std_coverage\t$gc_percent\n";
 close $fh_parse;
 
 

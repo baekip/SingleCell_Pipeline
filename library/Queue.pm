@@ -56,14 +56,14 @@ sub program_run {
     print "Start: $datestring\n";
     print "-------------------------------------------------------\n";
     
-    my ($script, $program, $input_path, $sample, $sh_path, $output_path, $threads, $config) = @_;
+    my ($script, $program, $input_path, $sample, $sh_path, $output_path, $threads, $config, $option) = @_;
 #    $input_path = sprintf ("%s/%s", $input_path, $sample);
     $sh_path = sprintf ("%s/%s/", $sh_path, $sample);
     $output_path = sprintf ("%s/%s/", $output_path, $sample);
     checkFile($script);
     make_dir($output_path);
     
-    my $cmd = "perl $script -p $program -i $input_path -S $sample -l $sh_path -o $output_path -t $threads -c $config";
+    my $cmd = "perl $script -p $program -i $input_path -S $sample -l $sh_path -o $output_path -t $threads -c $config -r $option";
     print $cmd."\n";
     return $cmd;
 }

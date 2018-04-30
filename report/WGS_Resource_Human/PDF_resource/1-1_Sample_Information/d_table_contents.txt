@@ -1,7 +1,0 @@
-[[10]]
-¡Ü Sample ID(TBI ID): Sample ID provided by customer(Temporary ID assigned by TheragenEtex)
-¡Ü Total reads: The number of generated reads
-¡Ü Total yield (Gbp): Giga base pairs of produced sequence data for each sample
-¡Ü GC rate: The ratio of GC, which is the base call of C, G
-¡Ü Q30 MoreBases Rate: The quality ratio satisfying Phred quality score greater than 30, which represents an error rate of 1 in 1000, with a corresponding call accuracy of 99.9%
-¡Ü Q20 MoreBases Rate: The quality ratio satisfying Phred quality score greater than 20, which represents an error rate of 1 in 100, with a corresponding call accuracy of 99% 

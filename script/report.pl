@@ -42,8 +42,7 @@ read_config ($config_file, \%info);
 
 my $project_path = $info{project_path};
 my $dev_path = $info{dev_path};
-my $script_path = "$dev_path/script";
-my $dev_report = "$dev_path/report/SV_Resource";
+my $script_path = "$dev_path/report/script";
 
 ### make stat result file 
 
@@ -56,7 +55,7 @@ print $fh_sh "#\$ -pe smp $threads\n";
 #print $fh_sh "#\$ -q $queue\n";
 print $fh_sh "date\n";
 
-print $fh_sh "perl $dev_report/SV_report.pl -c $config_file -o $output_path -i $input_path\n"; 
+print $fh_sh "perl $script_path/sc_report.pl -c $config_file -o $output_path -i $input_path\n"; 
 
 print $fh_sh "date\n";
 close $fh_sh;

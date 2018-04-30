@@ -1,7 +1,0 @@
-[[10]]
-¡Ü The mapping process is to compare the sequenced reads to a customer-designated reference gonome using string alignment algorithm.
-¡Ü Sample ID: ID provided from customer
-¡Ü Mapped Read: Total number of mapped reads
-¡Ü Mapped Base: Total number of mapped bases (nucleotide)
-¡Ü Mean Insert Size (std): Mean, standard deviation of the insert size distribution if applicable.
-¡Ü Mean Coverage (std): Mean, standard deviation of coverage is calculated based on extraction of pair overlap-region

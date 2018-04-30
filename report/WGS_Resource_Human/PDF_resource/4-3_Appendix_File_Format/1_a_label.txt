@@ -1,3 +1,0 @@
-[[20],[16]]
-4.2 File Format Description
-	4.2.1 Variant Calling Format (VCF)

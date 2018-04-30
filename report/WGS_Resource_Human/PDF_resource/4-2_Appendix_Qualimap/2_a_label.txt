@@ -1,2 +1,0 @@
-[[13]]
-Mapped Reads GC-content Distribution

@@ -53,7 +53,7 @@ print $fh_sh_1 "#\$ -pe smp $threads_1\n";
 #print $fh_sh "#\$ -q $queue\n";
 print $fh_sh_1 "date\n";
 
-printf $fh_sh_1 ("%s -r %s -b %s -o %s -t %s -f fastq-gz --use-bases-mask y%s,y%s -m %d -j %d\n", $program, $sorted_reference, "$input_path_1/$sample", $output_path, "$output_path/Temp/", $read_length, $read_length, $memory, $threads_1);
+printf $fh_sh_1 ("%s -r %s -b %s -o %s -t %s --default-adapters Standard -f fastq-gz --use-bases-mask y%s,y%s -m %d -j %d\n", $program, $sorted_reference, "$input_path_1/$sample", $output_path, "$output_path/Temp/", $read_length, $read_length, $memory, $threads_1);
 
 print $fh_sh_1 "date\n";
 close $fh_sh_1;

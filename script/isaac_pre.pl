@@ -10,7 +10,7 @@ use lib dirname(abs_path $0) . '/../library';
 use Utils qw(make_dir checkFile cmd_system);
 
 
-my ($script, $program, $input_path, $sample, $sh_path, $output_path, $threads, $config);
+my ($script, $program, $input_path, $sample, $sh_path, $output_path, $threads, $option, $config);
 GetOptions (
     'script|s=s' => \$script,
     'program|p=s' => \$program,
@@ -19,6 +19,7 @@ GetOptions (
     'log_path|l=s' => \$sh_path,
     'output_path|o=s' => \$output_path,
     'threads|t=s' => \$threads,
+    'options|r=s' => \$option,
     'config_file|c=s' => \$config,
 );
 
@@ -30,6 +31,11 @@ my $hostname=hostname;
 #}else{
 #    $queue = 'all.q';
 #}
+
+if ( -d $output_path ) {
+    my $cmd = "rm -r $output_path";
+    system($cmd);
+}
 
 my $sh_file = sprintf ("%s/%s", $sh_path, "isaac_pre.$sample.sh");
 make_dir($sh_path);
@@ -50,6 +56,7 @@ if (scalar (@fastq_R1_list) == 0 || scalar (@fastq_R2_list) == 0){
 }elsif (scalar (@fastq_R1_list) != scalar (@fastq_R2_list) ){
     die "ERROR: Not inconsistent!! check your rawdata file R1, R2 <$input_path>";
 }else{
+    make_dir($output_path);
     for (my $i=0; $i<@fastq_R1_list; $i++) {
         my $j=$i+1;
         my $isaac_pattern_1 = "$output_path/lane$j\_read1.fastq.gz";
